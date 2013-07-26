@@ -1,0 +1,58 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'connect-dynamicHelpers' ]
+2 info using npm@1.3.2
+3 info using node@v0.10.13
+4 verbose node symlink C:\Program Files\nodejs\\node.exe
+5 verbose readDependencies using package.json deps
+6 verbose cache add [ 'connect-dynamicHelpers', null ]
+7 verbose cache add name=undefined spec="connect-dynamicHelpers" args=["connect-dynamicHelpers",null]
+8 verbose parsed url { protocol: null,
+8 verbose parsed url   slashes: null,
+8 verbose parsed url   auth: null,
+8 verbose parsed url   host: null,
+8 verbose parsed url   port: null,
+8 verbose parsed url   hostname: null,
+8 verbose parsed url   hash: null,
+8 verbose parsed url   search: null,
+8 verbose parsed url   query: null,
+8 verbose parsed url   pathname: 'connect-dynamicHelpers',
+8 verbose parsed url   path: 'connect-dynamicHelpers',
+8 verbose parsed url   href: 'connect-dynamicHelpers' }
+9 silly lockFile 7fa9311d-connect-dynamicHelpers connect-dynamicHelpers
+10 verbose lock connect-dynamicHelpers C:\Users\Administrator.HL-20130711VITY\AppData\Roaming\npm-cache\7fa9311d-connect-dynamicHelpers.lock
+11 silly lockFile 7fa9311d-connect-dynamicHelpers connect-dynamicHelpers
+12 silly lockFile 7fa9311d-connect-dynamicHelpers connect-dynamicHelpers
+13 verbose addNamed [ 'connect-dynamicHelpers', '' ]
+14 verbose addNamed [ null, '*' ]
+15 silly lockFile 820de0de-connect-dynamicHelpers connect-dynamicHelpers@
+16 verbose lock connect-dynamicHelpers@ C:\Users\Administrator.HL-20130711VITY\AppData\Roaming\npm-cache\820de0de-connect-dynamicHelpers.lock
+17 silly addNameRange { name: 'connect-dynamicHelpers', range: '*', hasData: false }
+18 verbose url raw connect-dynamicHelpers
+19 verbose url resolving [ 'https://registry.npmjs.org/', './connect-dynamicHelpers' ]
+20 verbose url resolved https://registry.npmjs.org/connect-dynamicHelpers
+21 info trying registry request attempt 1 at 01:45:11
+22 http GET https://registry.npmjs.org/connect-dynamicHelpers
+23 http 404 https://registry.npmjs.org/connect-dynamicHelpers
+24 silly registry.get cb [ 404,
+24 silly registry.get   { server: 'CouchDB/1.3.0 (Erlang OTP/R15B03)',
+24 silly registry.get     date: 'Thu, 25 Jul 2013 17:45:15 GMT',
+24 silly registry.get     'content-type': 'application/json',
+24 silly registry.get     'content-length': '52',
+24 silly registry.get     'cache-control': 'must-revalidate' } ]
+25 silly lockFile 820de0de-connect-dynamicHelpers connect-dynamicHelpers@
+26 silly lockFile 820de0de-connect-dynamicHelpers connect-dynamicHelpers@
+27 error 404 'connect-dynamicHelpers' is not in the npm registry.
+27 error 404 You should bug the author to publish it
+27 error 404
+27 error 404 Note that you can also install from a
+27 error 404 tarball, folder, or http url, or git url.
+28 error System Windows_NT 6.1.7601
+29 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "connect-dynamicHelpers"
+30 error cwd C:\nodejstest\microblog
+31 error node -v v0.10.13
+32 error npm -v 1.3.2
+33 error code E404
+34 verbose exit [ 1, true ]
