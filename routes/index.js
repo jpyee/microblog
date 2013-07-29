@@ -3,8 +3,13 @@
  * GET home page.
  */
 
-var crypto = require('crypto');
 var User = require('../models/user'); 
+var Post = require('../models/post');
+
+/* 
+ * crypto 是 Node.js 的一个核心模块，功能是加密并生成各种散列
+ */
+var crypto = require('crypto');
  
 module.exports = function(app) {
   app.get('/', function(req, res) {
@@ -18,7 +23,6 @@ module.exports = function(app) {
     });
   });
   
-  //////////
   //用户注册
   app.post('/reg', function(req, res) {
     if (req.body['password-repeat'] != req.body['password']) {
@@ -55,12 +59,13 @@ module.exports = function(app) {
 });
 
   //用户登入
+  app.get('/login', checkNotLogin);	////////
   app.get('/login', function(req, res) {
       res.render('login', {
 	      title: '用户登入',
 		});
 	});
-	
+  app.post('/login', checkNotLogin);///////
   app.post('/login', function(req, res) {
 	  //生成口令的散列值
       var md5 = crypto.createHash('md5');
@@ -86,46 +91,51 @@ module.exports = function(app) {
 	  req.flash('success', '登出成功');
 	  res.redirect('/');
   });
+  ///////
+  function checkLogin(req, res, next){
+		if(!req.session.user){
+			req.flash('error', '未登入');
+			return res.redirect('/login');
+		}
+		next();	
+  }
+	
+  function checkNotLogin(req, res, next){
+		if(req.session.user){
+			req.flash('error', '已登入');
+			return res.redirect('/');
+		}
+		next();		
+  }
+	////////
 };
 
 
 
 /*
 exports.index = function(req, res){
-  res.render('index', { title: 'Express' });
 };
-*/
 
-/*
 exports.hello = function(req, res) {
-    res.send('The time is ' + new Date().toString());
 };
-*/
-/*
+
 exports.user = function(req, res) {
-    res.send('user');
 };
 
 exports.post = function(req, res) {
-    res.send('post');
 };
 
 exports.reg = function(req, res) {
-    res.send('reg');
 };
 
 exports.doReg = function(req, res) {
-    res.send('doReg');
 };
 
 exports.login = function(req, res) {
-    res.send('login');
 };
 
 exports.doLogin = function(req, res) {
-    res.send('doLogin');
 };
 
 exports.logout = function(req, res) {
-    res.send('logout');
 };*/
